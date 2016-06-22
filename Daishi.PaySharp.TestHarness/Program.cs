@@ -2,6 +2,7 @@
 
 using System;
 using System.Configuration;
+using System.Net;
 using System.Text;
 
 #endregion
@@ -9,6 +10,9 @@ using System.Text;
 namespace Daishi.PaySharp.TestHarness {
     internal class Program {
         private static void Main(string[] args) {
+
+            //In order to communicate with paypal, need to set SSL communication to newer protocol.
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             Console.Write("Press the <return> key to run...");
             Console.ReadLine();
